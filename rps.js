@@ -39,6 +39,6 @@ function playRound(playerSelect, compSelect) {
     }
 }
 
-const playerSelect = 'rock'
+const playerSelect = 'Rock'.toLowerCase()
 const compSelect = computerPlay(rando)
 console.log(playRound(playerSelect, compSelect))
