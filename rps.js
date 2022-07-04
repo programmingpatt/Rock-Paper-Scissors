@@ -1,4 +1,6 @@
-
+let x = 0
+let y = 0
+let z = 0
 
 function computerPlay(rando) {
     if (rando == 1) {
@@ -42,22 +44,40 @@ function playRound(playerSelect, compSelect) {
 function playGame() {
     for (let i = 0; i<5;i++) {
         let rando = Math.floor(Math.random() * 3) + 1;
-        const playerSelect = 'Rock'.toLowerCase();
+        const playerSelect = prompt('Rock, Paper, or Scissors?').toLowerCase();
         const compSelect = computerPlay(rando);
-        console.log(playRound(playerSelect, compSelect));
+        console.log(playerSelect + '|' + compSelect)
+        if (playRound(playerSelect, compSelect)=='computer') {
+            x++;
+            console.log('computer')
+        }
+        else if (playRound(playerSelect, compSelect)=='player') {
+            y++;
+            console.log('player')
+        }
+        else if (playRound(playerSelect, compSelect)=='tie') {
+            z++
+            console.log('tie')
+        }
+        else {
+            x++;
+            console.log('Cheater! Win goes to computer!')
+        }
     }
+if (x>y) {
+    console.log('Computer Wins!')
+}
+else if (x<y) {
+    console.log('Player Wins!')
+}
+else if (x==y) {
+    console.log('It is a tie!')
+}
+else {
+    console.log('What Happpened?!')
+}
 }
 
 
 
 playGame()
-
-//if (playRound(playerSelect,computerPlay(rando)) == 'computer') {
-//    console.log('Loser!')
-//}
-//else if (playRound(playerSelect,computerPlay(rando)) =='player') {
-//    console.log('Winner!')
-//}
-//else if (playRound(playerSelect,computerPlay(rando))== 'tie') {
-//    console.log('Tie!')
-//}
