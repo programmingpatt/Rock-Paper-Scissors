@@ -1,4 +1,4 @@
-let rando = Math.floor(Math.random() * 3) + 1;
+
 
 function computerPlay(rando) {
     if (rando == 1) {
@@ -17,28 +17,47 @@ function playRound(playerSelect, compSelect) {
         return 'tie'
     }
     else if (playerSelect==='rock' && compSelect === 'paper') {
-        return 'computer wins'
+        return 'computer'
     }
     else if (playerSelect==='rock' && compSelect ==='scissors') {
-        return 'player wins'
+        return 'player'
     }
     else if (playerSelect==='paper' && compSelect ==='rock') {
-        return 'player wins'
+        return 'player'
     }
     else if (playerSelect==='paper' && compSelect ==='scissors') {
-        return 'computer wins'
+        return 'computer'
     }
     else if (playerSelect==='scissors' && compSelect ==='rock') {
-        return 'computer wins'
+        return 'computer'
     }
     else if (playerSelect==='scissors' && compSelect ==='paper') {
-        return 'player wins'
+        return 'player'
     }
     else {
         return 'Cheating is Forbidden!'
     }
 }
 
-const playerSelect = 'Rock'.toLowerCase()
-const compSelect = computerPlay(rando)
-console.log(playRound(playerSelect, compSelect))
+function playGame() {
+    for (let i = 0; i<5;i++) {
+        let rando = Math.floor(Math.random() * 3) + 1;
+        const playerSelect = 'Rock'.toLowerCase();
+        const compSelect = computerPlay(rando);
+        console.log(playRound(playerSelect, compSelect));
+    }
+}
+
+
+
+playGame()
+
+//if (playRound(playerSelect,computerPlay(rando)) == 'computer') {
+//    console.log('Loser!')
+//}
+//else if (playRound(playerSelect,computerPlay(rando)) =='player') {
+//    console.log('Winner!')
+//}
+//else if (playRound(playerSelect,computerPlay(rando))== 'tie') {
+//    console.log('Tie!')
+//}
