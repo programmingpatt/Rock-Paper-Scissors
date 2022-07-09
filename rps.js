@@ -41,3 +41,20 @@ function playRound(playerSelect, compSelect) {
         return 'Cheating is Forbidden!'
     }
 }
+
+function playGame() {
+    const roc = document.querySelector('.rock')
+    const pape = document.querySelector('.paper')
+    const sci = document.querySelector('.scissors')
+    roc.addEventListener('click', () => {
+        playRound('rock', computerPlay())
+    });
+    pape.addEventListener('click', () => {
+        playRound('paper', computerPlay())
+    });
+    sci.addEventListener('click', () => {
+        playRound('scissors', computerPlay())
+    });
+}
+
+playGame()
