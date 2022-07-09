@@ -2,7 +2,8 @@ let x = 0
 let y = 0
 let z = 0
 
-function computerPlay(rando) {
+function computerPlay() {
+    let rando = Math.floor(Math.random()*3)+1
     if (rando == 1) {
         return 'rock'
     }
@@ -40,44 +41,3 @@ function playRound(playerSelect, compSelect) {
         return 'Cheating is Forbidden!'
     }
 }
-
-function playGame() {
-    for (let i = 0; i<5;i++) {
-        let rando = Math.floor(Math.random() * 3) + 1;
-        const playerSelect = prompt('Rock, Paper, or Scissors?').toLowerCase();
-        const compSelect = computerPlay(rando);
-        console.log(playerSelect + '|' + compSelect)
-        if (playRound(playerSelect, compSelect)=='computer') {
-            x++;
-            console.log('computer')
-        }
-        else if (playRound(playerSelect, compSelect)=='player') {
-            y++;
-            console.log('player')
-        }
-        else if (playRound(playerSelect, compSelect)=='tie') {
-            z++
-            console.log('tie')
-        }
-        else {
-            x++;
-            console.log('Cheater! Win goes to computer!')
-        }
-    }
-if (x>y) {
-    console.log('Computer Wins!')
-}
-else if (x<y) {
-    console.log('Player Wins!')
-}
-else if (x==y) {
-    console.log('It is a tie!')
-}
-else {
-    console.log('What Happpened?!')
-}
-}
-
-
-
-playGame()
